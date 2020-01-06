@@ -1,0 +1,71 @@
+# Once that is working, we will change our code in a way that if user type ,"i want to go to 'direction/destination'"
+# then also it works perfectly
+
+locations = {0: "You are sitting in front of a computer learning Python",
+             1: "You are standing at the end of a road before a small brick building",
+             2: "You are at the top of a hill",
+             3: "You are inside a building, a well house for a small stream",
+             4: "You are in a valley beside a stream",
+             5: "You are in the forest"}
+
+# Here we simply converted list to dictionary by using index of list as the key of the map. This makes our code work
+# without any change
+exits_Direction = {0: {"Q": 0},
+                   1: {"W": 2, "E": 3, "N": 5, "S": 4, "Q": 0},
+                   2: {"N": 5, "Q": 0},
+                   3: {"W": 1, "Q": 0},
+                   4: {"N": 1, "W": 2, "Q": 0},
+                   5: {"S": 1, "W": 2, "Q": 0}
+                   }
+
+exits_Number = {0: {"0": 0},
+                1: {"2": 2, "3": 3, "5": 5, "4": 4, "0": 0},
+                2: {"5": 5, "0": 0},
+                3: {"1": 1, "0": 0},
+                4: {"1": 1, "2": 2, "0": 0},
+                5: {"1": 1, "2": 2, "0": 0}
+                }
+
+# Creating new dictionary to map keys of exits[] dictionary with the word enter by user
+vocabulary = {"NORTH": "N", "EAST": "E", "WEST": "W", "SOUTH": "S", "QUIT": "Q",
+              "0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5,
+              "ROAD": "1", "HILL": "2", "BUILDING": "3", "VALLEY": "4", "FOREST": "5"
+              }
+
+loc = 1
+
+while True:
+    print()
+    # Using join() to fetch and converts all the keys of the exits[loc] dictionary
+    availableMovements = ", ".join(exits_Direction[loc].keys())
+    print(f"{locations[loc]}")
+    userInput = input("Available Movements Are: {}\nPlease enter where you want to move: "
+                      .format(availableMovements)).upper()
+
+    # creating a dummy dictionary and copying all the available movements values to it from exits_Direction
+    # depending on loc value
+    exits = exits_Direction[loc].copy()
+    # combining the dummy dictionary and exits_Number depending on loc value
+    exits.update(exits_Number[loc])
+
+    # Checking if user has input a character or a word. If inout is a  word then it will search for it in 'vocabulary'
+    # dictionary key and mapping key's value to the user input
+    direction = userInput
+    if len(userInput) > 1:
+        # we are splitting the user input into a list of string at " " and iterating to that list
+        for word in userInput.split():
+            # checking of any of the word in list in a the key in our vocabulary dictionary
+            if word in vocabulary:
+                direction = vocabulary[word]
+                break
+
+    # checking if the direction entered by user or not
+    if direction in exits.keys():
+        loc = exits[direction]
+        # if user press 'Q' and want to exit
+        if loc == 0:
+            print("You have successfully exited game.")
+            break
+    else:   # if user enters invalid direction
+        print("That is not a valid movements. Please try again.")
+        continue
