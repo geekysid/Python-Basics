@@ -1,5 +1,5 @@
 
-<p style="text-align: center;"><img src="https://user-images.githubusercontent.com/59141234/71911924-9dc6d680-319a-11ea-9b06-554ea5cb4eb1.png" height="150px" />
+<p style="text-align: center;"><img src="https://user-images.githubusercontent.com/59141234/71911924-9dc6d680-319a-11ea-9b06-554ea5cb4eb1.png" height="150px" /></p>
 <p style="font-size:25px; text-align: center;"><b>Python Basic</b><br />
 <span style="font-size:16px;">Sharing basic understanding of the Python Coding</span></p>
 
