@@ -9,20 +9,19 @@
 
 ## Synopsis
 <p style="text-align: justify">
-In this repository, I will share my understanding of python code on a basic level. Python is one of the most sought after coding languages in the world right now and is very easy to learn. Topic covered here are as below:
+In this repository, I will share my understanding of python code on a basic level. Python is one of the most sought after coding languages in the world right now and is very easy to learn. Topic covered here are as below:<p>
 
 1. [Strings]("https://github.com/siddhantshah1986/Python-Basics/tree/master/1.%20Strings" "")
 2. [Loops and Conditionals]("https://github.com/siddhantshah1986/Python-Basics/tree/master/2.%20Conditionals%20%26%20Loop" "")
 3. [List, Set and Tuples]("https://github.com/siddhantshah1986/Python-Basics/tree/master/3.%20List%2C%20Set%2C%20Tuple" "")
 4. [Dictionary]("https://github.com/siddhantshah1986/Python-Basics/tree/master/4.%20Dictionary" "")
-5. [Funtions]("" "") -  Coding in progress
-6. [File IO]("" "") -  Coding in progress
-7. [Database in Python]("" "") -  Coding in progress
-8. [Exception]("" "") -  Coding in progress
-9. [Comprehenssion]("" "") -  Coding in progress
-10. [Lambda Expression]("" "") -  Coding in progress
+5. [Funtions]("https://github.com/siddhantshah1986/Python-Basics" "") -  Coding in progress
+6. [File IO]("https://github.com/siddhantshah1986/Python-Basics" "") -  Coding in progress
+7. [Database in Python]("https://github.com/siddhantshah1986/Python-Basics" "") -  Coding in progress
+8. [Exception]("https://github.com/siddhantshah1986/Python-Basics" "") -  Coding in progress
+9. [Comprehenssion]("https://github.com/siddhantshah1986/Python-Basics" "") -  Coding in progress
+10. [Lambda Expression]("https://github.com/siddhantshah1986/Python-Basics" "") -  Coding in progress
 11. Many more to come.
-</p>
 
 
 ## Coding Language
