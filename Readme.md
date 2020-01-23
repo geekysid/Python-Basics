@@ -31,7 +31,7 @@
 2. [Loops and Conditionals](https://github.com/siddhantshah1986/Python-Basics/tree/master/2.%20Conditionals%20%26%20Loop)
 3. [List, Set and Tuples](https://github.com/siddhantshah1986/Python-Basics/tree/master/3.%20List%2C%20Set%2C%20Tuple)
 4. [Dictionary](https://github.com/siddhantshah1986/Python-Basics/tree/master/4.%20Dictionary)
-5. [Funtions](https://github.com/siddhantshah1986/Python-Basics) -  Coding in progress
+5. [Funtions](https://github.com/siddhantshah1986/Python-Basics/tree/master/4.%20Functions)
 6. [File IO](https://github.com/siddhantshah1986/Python-Basics) -  Coding in progress
 7. [Database in Python](https://github.com/siddhantshah1986/Python-Basics) -  Coding in progress
 8. [Exception](https://github.com/siddhantshah1986/Python-Basics) -  Coding in progress
