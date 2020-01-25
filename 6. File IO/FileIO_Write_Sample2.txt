@@ -1,0 +1,1 @@
+('Love At First Sting', 'Scorpions', 1984, ((1, 'Bad Apples'), (2, 'November Rain'), (3, 'Right Next Door to Hell'), (4, 'Bad Obsession')))
