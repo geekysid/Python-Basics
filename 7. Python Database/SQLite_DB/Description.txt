@@ -1,0 +1,100 @@
+In order to work with SQLite3 in python,
+
+1. We need to import a library called SQLite3
+        # import sqlite3
+
+2. Need to establish connection with the database. For this we use the connect() method of the sqlite3 library
+    and pass the name of database file. If the database is not found then a new database file is created with
+    same name. This file is stored at the same location where the python file is store. This method returns
+    the connection which can be stored in a variable.
+        # conn = sqlite3.connect('databaseName.db')
+
+    We can also create a temporary database in the memory. This database will be deleted as soon as the program
+    is closed and so it cannot be used afterwords.
+        # conn = sqlite3.connect(:memory:)
+
+    We h
+    We can also connect to the database located on the server by using this:
+        # conn =
+
+3. Now that the connection is established and its object is stored in a conn variable, we will create an instance
+    of cursor by using cursor method of sqlite3 library. This cursor object is required to execute any SQL
+    statements in python.
+        # cursor_obj = conn.cursor()
+
+4. CREATING A TABLE
+    The table creation query looks like below:
+        CREATE TABLE table_name(col1 type, col2 type, col3 type,....)
+
+    We have used following statement in our example and stored it in the form of string in variable 'table'
+        table = "CREATE TABLE employee2(_id integer PRIMARY KEY, name text, age integer, salary float)"
+
+    Now we pass this query in the execute method of the cursor class as below
+        cursor_obj.execute(table)
+
+    This wil create the table. In order to check if table was successfully created or if table exist in
+    database we can use following query:
+        SELECT name FROM sqlite_master WHERE type='table' AND name='table_name'
+
+    We can also use syntax IF NOT EXISTS in the create table query in order to create the table only if table
+    does'nt exits.
+        CREATE TABLE IF NOT EXISTS employee2(_id integer PRIMARY KEY, name text, age integer, salary float)
+
+    In our case query will look like this:
+        create_result_query = "SELECT count(name) FROM sqlite_master WHERE type='table' AND name='employee2'"
+
+    Now we pass this query to the execute method
+        cursor_obj.execute(create_result_query)
+    This method basically executes the query and updates cursor_obj with the result.
+
+    We can use fetchone() method of cursor_obj, which will give result of the  in the form of tuple and then
+     we can fetch tuple data to know if table exist or not as in below example.
+        if create_result.fetchone()[0] == 1:
+            print("Table Exist")
+        else:
+            print("Table does not exits")
+
+    It is important to note that we need to execute command conn.commit() in order to save all the changes in
+        the database.
+
+5. INSERTING IN TABLE
+    The table creation query looks like below:
+        option 1: INSERT INTO table_name VALUES(value_col1, value_col2, value_col3,...)
+        option 2: INSERT INTO table_name SET col1=value1, col2=value2, col3=value3,...)
+        option 3: INSERT INTO table_name(col1, col2, col3,...) VALUES(value1, value2, value3,...)
+
+    We have used following statement in our example and stored it in the form of string in variable 'insert_emp'
+        insert_emp = "INSERT INTO employee2 VALUES(7, 'shilp5', 33, 4.65)"
+
+    Now we pass this query in the execute method of the cursor class as below
+        cursor_obj.execute(insert_emp)
+
+    This execute() method updates the cursor_obj with the result of the sql statement execution. In case of INSERT
+    SQL statement, we can use the rowcount property of cursor_obj which reflects the the number of rows affected
+    in database. We can use this proper to do some task as below:
+        if cursor_obj.rowcount == 1:     # Since we have inserted only one employee so we are testing with 1.
+                print("Employee inserted")
+        else:
+            print("Employee insertion failed")
+
+
+cursor_obj: When Select  statement is passed through this then cursor_obj fetches one row at a time. Suppose
+            select statement returns 10 rows. when we call this function 1st time then it will return first row
+            and cursor will move to 2nd row. When we call it 2nd time, the we will get the 2nd row and cursor
+            will move to 3rd row. There is now way we can fetch 1st row if we have called the function 2 times.
+            There is now way we can fetch nth row cursor have moved to (n+1)th row.
+
+fetchone(): This method returns one row at a time. Suppose we have 10 rows. when we call this function 1st time
+            then it will return first row and cursor will move to 2nd row. When we call it 2nd time, the we will
+            get the 2nd row and cursor will move to 3rd row. There is now way we can fetch 1st row if we have
+            called the function 2 times.
+
+fetchall(): This method returns entire data set at once. Suppose we have 10 rows. When we call this function Then
+            we get the al the rows in a list in the form of tuple. We can use for loop to iterate through this
+            data set.
+
+
+
+
+
+
